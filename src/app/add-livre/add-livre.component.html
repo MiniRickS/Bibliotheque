@@ -1,0 +1,28 @@
+<h2 class="title">Ajouter un livre</h2>
+<form class="form">
+  <div class="form__group">
+    <label for="nom">Nom :</label>
+    <input type="text" [(ngModel)]="nouveauLivre.nom" id="nom" name="nom">
+  </div>
+  <div class="form__group">
+    <label for="dateLecture">Date de lecture :</label>
+    <input type="text" [(ngModel)]="nouveauLivre.dateLecture" id="dateLecture" name="dateLecture">
+  </div>
+  <div class="form__group">
+    <label for="lien">Lien :</label>
+    <input type="text" [(ngModel)]="nouveauLivre.lien" id="lien" name="lien">
+  </div>
+  <div class="form__group">
+    <label for="langues">Langues :</label>
+    <input type="text" [(ngModel)]="nouveauLivre.langues" id="langues" name="langues">
+  </div>
+  <div class="form__group">
+    <label for="chapitresLus">Chapitres lus :</label>
+    <input type="text" [(ngModel)]="nouveauLivre.chapitresLus" id="chapitresLus" name="chapitresLus">
+  </div>
+  <div class="form__group">
+    <label for="notes">Notes :</label>
+    <input type="text" [(ngModel)]="nouveauLivre.notes" id="notes" name="notes">
+  </div>
+  <button (click)="ajouterLivre()">Ajouter</button>
+</form>

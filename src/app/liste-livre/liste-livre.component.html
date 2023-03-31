@@ -1,0 +1,26 @@
+<h2 style="text-align: center;">Liste des livres</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Date de lecture</th>
+      <th>Lien</th>
+      <th>Langues</th>
+      <th>Chapitres lus</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livre of livres">
+      <td>{{ livre.nom }}</td>
+      <td>{{ livre.dateLecture }}</td>
+      <td><a href="{{ livre.lien }}">{{ livre.lien }}</a></td>
+      <td>{{ livre.langues }}</td>
+      <td>{{ livre.chapitresLus }}</td>
+      <td>{{ livre.notes }}</td>
+      <td>
+        <button (click)="supprimerLivre(livre)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
