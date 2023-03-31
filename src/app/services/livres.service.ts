@@ -16,7 +16,7 @@ export class LivreService {
     }
   ];
 
-  constructor() { }
+  constructor(private router) { }
 
   ajouterLivre(nouveauLivre: Livre): void {
     // Vérifier si un livre avec le même nom existe déjà
@@ -25,7 +25,9 @@ export class LivreService {
       console.log('Un livre avec le même nom existe déjà dans la liste !');
       return;
     }
-    else this.livres.push(nouveauLivre);
+    else {
+      this.livres.push(nouveauLivre);
+    }
   }
 
   getLivres(): Livre[] {
