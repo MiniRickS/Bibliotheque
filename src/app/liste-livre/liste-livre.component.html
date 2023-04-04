@@ -21,6 +21,7 @@
           <th>Nom</th>
           <th>Date de lecture</th>
           <th>Lien</th>
+          <th>Site</th>
           <th>Langues</th>
           <th>Chapitres lus</th>
           <th>Notes</th>
@@ -29,8 +30,9 @@
       <tbody>
         <tr *ngFor="let livre of livres">
           <td>{{ livre.nom }}</td>
-          <td>{{ livre.dateLecture }}</td>
+          <td>{{ livre.dateLecture.toLocaleDateString('fr-FR') }}</td>
           <td><a href="{{ livre.lien }}">{{ livre.lien }}</a></td>
+          <td>{{ livre.site }}</td>
           <td>{{ livre.langues }}</td>
           <td>{{ livre.chapitresLus }}</td>
           <td>{{ livre.notes }}</td>
@@ -42,7 +44,6 @@
     </table>
   </main>
   <footer>
-    <p>Ce site a été créé par [votre nom] dans le cadre de son projet de fin d'études.</p>
   </footer>
 </body>
 </html>

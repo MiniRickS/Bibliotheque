@@ -7,11 +7,15 @@
     </div>
     <div class="form__group">
       <label for="dateLecture">Date de lecture :</label>
-      <input type="text" [(ngModel)]="nouveauLivre.dateLecture" id="dateLecture" name="dateLecture">
+      <input type="date" [(ngModel)]="nouveauLivre.dateLecture" id="dateLecture" name="dateLecture">
     </div>
     <div class="form__group">
       <label for="lien">Lien :</label>
       <input type="text" [(ngModel)]="nouveauLivre.lien" id="lien" name="lien">
+    </div>
+    <div class="form__group">
+      <label for="site">Site :</label>
+      <input type="text" [(ngModel)]="nouveauLivre.site" id="site" name="site">
     </div>
     <div class="form__group">
       <label for="langues">Langues :</label>
