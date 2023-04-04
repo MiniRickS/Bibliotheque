@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Livre } from './livre';
+import { LivreService } from './services/livres.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Bibliotheque';
+  livres: Livre[] =[];
+
+  constructor(private livreService: LivreService) { }
+
+  ngOnInit(): void {
+    this.livreService.getLivres().subscribe((livres: Livre[]) => {
+      this.livres = livres;
+    });
+  }
 }

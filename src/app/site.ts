@@ -1,5 +1,7 @@
+import { Livre } from './livre';
+
 export interface Site {
   nom: string;
   domaine: string;
-  site: site;
+  livre: Livre | null;
 }
