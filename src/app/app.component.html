@@ -1,48 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>Bibliothèque en ligne</title>
-	<link rel="stylesheet" href="./app.component.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibliothèque</title>
 </head>
 <body>
-
-	<header>
-		<div class="container">
-			<h1>Bibliothèque</h1>
-			<nav>
-				<a href="#">Liste des livres</a>
-				<a href="#">Ajouter un livre</a>
-			</nav>
-		</div>
-	</header>
-
-	<main>
-		<div class="container">
-			<section class="books">
-				<h2>Nouveaux livres</h2>
-				<article>
-					<figure>
-						<img src="livre1.jpg" alt="Livre 1">
-						<figcaption>Titre du livre 1</figcaption>
-					</figure>
-					<p>Description du livre 1</p>
-				</article>
-				<article>
-					<figure>
-						<img src="livre2.jpg" alt="Livre 2">
-						<figcaption>Titre du livre 2</figcaption>
-					</figure>
-					<p>Description du livre 2</p>
-				</article>
-			</section>
-		</div>
-	</main>
-
-	<footer>
-		<div class="container">
-			<p>&copy; 2023 Bibliothèque en ligne</p>
-		</div>
-	</footer>
-
+  <header>
+    <h1>Bibliothèque</h1>
+    <nav>
+      <a routerLink="/livres" routerLinkActive="active">Liste des livres</a>
+      <a routerLink="/ajout-livre" routerLinkActive="active">Ajouter un livre</a>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer>
+    <p>Bibliothèque 2023©</p>
+  </footer>
 </body>
 </html>
