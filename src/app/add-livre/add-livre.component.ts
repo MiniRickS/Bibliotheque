@@ -32,6 +32,8 @@ export class AddLivreComponent implements OnInit {
   }
 
   ajouterLivre(): void {
+    // Conversion de la chaîne de caractères en objet Date
+    this.nouveauLivre.dateLecture = new Date(this.nouveauLivre.dateLecture);
     this.livreService.ajouterLivre(this.nouveauLivre);
     this.nouveauLivre = {
       nom: '',
