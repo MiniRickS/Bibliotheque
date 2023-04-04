@@ -38,9 +38,14 @@ export class LivreService {
     return this.livres;
   }
 
-  supprimerLivre(livre: Livre): void {
+  modifierLivre(livre: Livre): void {
+    this.router.navigate(['/modifier-livre', livre.nom]);
+  }
+
+  supprimerLivre(livre: Livre): void {//test
     const index = this.livres.indexOf(livre);
     if (index !== -1) {
+
       this.livres.splice(index, 1);
     }
   }
