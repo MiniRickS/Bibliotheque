@@ -1,0 +1,90 @@
+/* Réinitialisation des marges et des rembourrages */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Définition de l'image d'arrière-plan */
+html, body {
+  height: 100%;
+  background-image: url('https://t3.ftcdn.net/jpg/05/62/24/18/360_F_562241865_RSRXfjubdjFMKCpdlZqN66vSc2xtbN61.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Centrer le contenu de la page verticalement */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Centrer le contenu de la page horizontalement */
+main {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styler les en-têtes */
+header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Styler la table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #eee;
+}
+
+/* Styler le bouton */
+button {
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  background-color: #333;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Styler le pied de page */
+footer {
+  text-align: center;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+footer p {
+  font-size: 0.8rem;
+  font-family: 'Open Sans', sans-serif;
+}
