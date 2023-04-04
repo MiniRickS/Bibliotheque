@@ -18,11 +18,13 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: scroll;
 }
+
 
 /* Centrer le contenu de la page horizontalement */
 main {
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
