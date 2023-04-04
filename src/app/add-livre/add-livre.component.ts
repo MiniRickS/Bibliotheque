@@ -7,6 +7,7 @@ import { LivreService } from '../services/livres.service';
   templateUrl: './add-livre.component.html',
   styleUrls: ['./add-livre.component.css']
 })
+
 export class AddLivreComponent implements OnInit {
   nouveauLivre: Livre = {
     nom: '',
@@ -17,13 +18,22 @@ export class AddLivreComponent implements OnInit {
     chapitresLus: 0,
     notes: 0
   };
+  dates: string[] = []; // Ajout de la propriété "dates"
 
   constructor(private livreService: LivreService) { }
 
   ngOnInit(): void {
+    // Initialisation de la liste des dates pour les 30 derniers jours
+    for (let i = 0; i < 30; i++) {
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      this.dates.push(date.toLocaleDateString('fr-FR'));
+    }
   }
 
   ajouterLivre(): void {
+    // Conversion de la chaîne de caractères en objet Date
+    this.nouveauLivre.dateLecture = new Date(this.nouveauLivre.dateLecture);
     this.livreService.ajouterLivre(this.nouveauLivre);
     this.nouveauLivre = {
       nom: '',

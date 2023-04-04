@@ -7,7 +7,6 @@
 /* Définition de l'image d'arrière-plan */
 html, body {
   height: 100%;
-  background-image: url('https://t3.ftcdn.net/jpg/05/62/24/18/360_F_562241865_RSRXfjubdjFMKCpdlZqN66vSc2xtbN61.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -18,12 +17,14 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: scroll;
 }
+
 
 /* Centrer le contenu de la page horizontalement */
 main {
-  width: 80%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.8);
