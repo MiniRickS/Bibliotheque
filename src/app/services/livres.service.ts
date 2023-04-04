@@ -16,7 +16,6 @@ export class LivreService {
     }
   ];
 
-  constructor(private router) { }
 
   ajouterLivre(nouveauLivre: Livre): void {
     // Vérifier si un livre avec le même nom existe déjà
