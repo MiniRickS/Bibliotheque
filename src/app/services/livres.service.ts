@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Livre } from '../livre';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class LivreService {
   livres: Livre[] = [
     {
       nom: 'Le Petit Prince',
-      dateLecture: '01/01/2022',
+      dateLecture: new Date('2022-01-01'),
       lien: 'https://www.example.com/le-petit-prince',
+      site: 'https://www.example.com',
       langues: 'français, anglais',
-      chapitresLus: '1-10',
-      notes: 'Très belle histoire'
+      chapitresLus: 10,
+      notes: 7
     }
   ];
 
+  constructor(private router: Router) { }
 
   ajouterLivre(nouveauLivre: Livre): void {
     // Vérifier si un livre avec le même nom existe déjà
@@ -26,6 +30,7 @@ export class LivreService {
     }
     else {
       this.livres.push(nouveauLivre);
+      this.router.navigate(['/livres']);
     }
   }
 

@@ -10,11 +10,12 @@ import { LivreService } from '../services/livres.service';
 export class AddLivreComponent implements OnInit {
   nouveauLivre: Livre = {
     nom: '',
-    dateLecture: '',
+    dateLecture: new Date(),
     lien: '',
+    site: '',
     langues: '',
-    chapitresLus: '',
-    notes: ''
+    chapitresLus: 0,
+    notes: 0
   };
 
   constructor(private livreService: LivreService) { }
@@ -26,11 +27,12 @@ export class AddLivreComponent implements OnInit {
     this.livreService.ajouterLivre(this.nouveauLivre);
     this.nouveauLivre = {
       nom: '',
-      dateLecture: '',
+      dateLecture: new Date(),
       lien: '',
+      site: '',
       langues: '',
-      chapitresLus: '',
-      notes: ''
+      chapitresLus: 0,
+      notes: 0
     };
   }
 }
