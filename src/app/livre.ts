@@ -1,8 +1,9 @@
 export interface Livre {
   nom: string;
-  dateLecture: string;
+  dateLecture: Date;
   lien: string;
+  site: string;
   langues: string;
-  chapitresLus: string;
-  notes: string;
+  chapitresLus: number;
+  notes: number;
 }
