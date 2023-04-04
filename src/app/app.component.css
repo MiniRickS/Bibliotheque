@@ -11,6 +11,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: #2c2c2c; /* remplacer par une couleur sombre de votre choix */
+  background-image: url('https://t3.ftcdn.net/jpg/05/62/24/18/360_F_562241865_RSRXfjubdjFMKCpdlZqN66vSc2xtbN61.jpg');
+  background-size: cover;
 }
 
 
@@ -64,11 +66,17 @@ nav a:last-child {
 }
 
 main {
-  padding: 2rem 0;
+  padding: 0rem 0;
 }
 
 footer {
-  padding: 2rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   text-align: center;
+  height: 4rem;
+  padding: 1rem 0;
   color: #fff;
 }
+

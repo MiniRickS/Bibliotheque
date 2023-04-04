@@ -7,7 +7,6 @@
 /* Définition de l'image d'arrière-plan */
 html, body {
   height: 100%;
-  background-image: url('https://t3.ftcdn.net/jpg/05/62/24/18/360_F_562241865_RSRXfjubdjFMKCpdlZqN66vSc2xtbN61.jpg');
   background-size: cover;
   background-position: center;
 }

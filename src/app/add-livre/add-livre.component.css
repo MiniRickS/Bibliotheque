@@ -1,14 +1,16 @@
+
 .title {
   text-align: center;
   font-size: 2rem;
   margin-top: 2rem;
+
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 0rem;
   font-family: 'Open Sans', sans-serif;
   color: #fff;
 }
@@ -16,7 +18,7 @@
 .form__group {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 0rem;
 }
 
 .form__group label {
@@ -47,3 +49,4 @@ button {
 button:hover, button:active {
   background-color: #555;
 }
+
