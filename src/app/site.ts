@@ -1,7 +1,8 @@
 import { Livre } from './livre';
 
 export interface Site {
+  id: number;
   nom: string;
   domaine: string;
-  livre: Livre | null;
+  livres: Livre[];
 }

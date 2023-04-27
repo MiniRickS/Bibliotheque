@@ -28,12 +28,15 @@
           <td>{{ livre.nom }}</td>
           <td>{{ livre.dateLecture.toLocaleDateString('fr-FR') }}</td>
           <td><a href="{{ livre.lien }}">{{ livre.lien }}</a></td>
-          <td>{{ livre.site }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let site of livre.sites">{{ site.nom }}</li>
+            </ul>
+          </td>
           <td>{{ livre.langues }}</td>
           <td>{{ livre.chapitresLus }}</td>
           <td>{{ livre.notes }}</td>
           <td>
-
             <button (click)="supprimerLivre(livre)">Supprimer</button>
           </td>
         </tr>

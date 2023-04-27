@@ -14,8 +14,13 @@
       <input type="text" [(ngModel)]="nouveauLivre.lien" id="lien" name="lien">
     </div>
     <div class="form__group">
-      <label for="site">Site :</label>
-      <input type="text" [(ngModel)]="nouveauLivre.site" id="site" name="site">
+      <label for="sites">Sites :</label>
+      <div *ngFor="let site of nouveauLivre.sites; let i = index">
+        <label for="site{{i}}">Site {{i + 1}} :</label>
+        <input type="text" [(ngModel)]="site.nom" id="site{{i}}" name="site{{i}}">
+        <label for="domaine{{i}}">Domaine {{i + 1}} :</label>
+        <input type="text" [(ngModel)]="site.domaine" id="domaine{{i}}" name="domaine{{i}}">
+      </div>
     </div>
     <div class="form__group">
       <label for="langues">Langues :</label>

@@ -1,53 +1,31 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Livre } from '../livre';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class LivreService {
-  livres: Livre[] = [
-    {
-      nom: 'Le Petit Prince',
-      dateLecture: new Date('2022-01-01'),
-      lien: 'https://www.example.com/le-petit-prince',
-      site: 'https://www.example.com',
-      langues: 'français, anglais',
-      chapitresLus: 10,
-      notes: 7
-    }
-  ];
+  apiUrl = 'http://localhost:8080/api/livres';
 
-  constructor(private router: Router) { }
+  constructor(private http: HttpClient) {}
 
-  ajouterLivre(nouveauLivre: Livre): void {
-    // Vérifier si un livre avec le même nom existe déjà
-    const livreExistant = this.livres.find(livre => livre.nom === nouveauLivre.nom);
-    if (livreExistant) {
-      console.log('Un livre avec le même nom existe déjà dans la liste !');
-      return;
-    }
-    else {
-      this.livres.push(nouveauLivre);
-      this.router.navigate(['/livres']);
-    }
+  ajouterLivre(nouveauLivre: Livre): Observable<Livre> {
+    return this.http.post<Livre>(this.apiUrl, nouveauLivre);
   }
 
-  getLivres(): Livre[] {
-    return this.livres;
+  getLivres(): Observable<Livre[]> {
+    return this.http.get<Livre[]>(this.apiUrl);
   }
 
-  modifierLivre(livre: Livre): void {
-    this.router.navigate(['/modifier-livre', livre.nom]);
+  modifierLivre(livre: Livre): Observable<Livre> {
+    const url = `${this.apiUrl}/${livre.id}`;
+    return this.http.put<Livre>(url, livre);
   }
 
-  supprimerLivre(livre: Livre): void {//test
-    const index = this.livres.indexOf(livre);
-    if (index !== -1) {
-
-      this.livres.splice(index, 1);
-    }
+  supprimerLivre(livre: Livre): Observable<Livre> {
+    const url = `${this.apiUrl}/${livre.id}`;
+    return this.http.delete<Livre>(url);
   }
-
 }
