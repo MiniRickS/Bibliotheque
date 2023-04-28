@@ -1,1 +1,42 @@
-<p>liste-site works!</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <header>
+    <br>
+  </header>
+  <main>
+    <h2>Liste des sites</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Domaine</th>
+          <th>Livres</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let site of sites">
+          <td>{{ site.nom }}</td>
+          <td><a href="{{ site.domaine }}" target="_blank">{{ site.domaine }}</a></td>
+          <td>
+            <ul>
+              <li *ngFor="let livre of site.livres"><a href="{{ livre.lien }}" target="_blank">{{ livre.nom }}</a></li>
+            </ul>
+          </td>
+          <td>
+            <button (click)="modifierSite(site)">Modifier</button>
+            <button (click)="supprimerSite(site)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+  </footer>
+</body>
+</html>

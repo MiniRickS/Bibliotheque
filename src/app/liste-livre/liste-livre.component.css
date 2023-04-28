@@ -1,17 +1,14 @@
-/* Réinitialisation des marges et des rembourrages */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* Définition de l'image d'arrière-plan */
 html, body {
   height: 100%;
   background-size: cover;
   background-position: center;
 }
 
-/* Centrer le contenu de la page verticalement */
 .container {
   height: 100%;
   display: flex;
@@ -21,7 +18,6 @@ html, body {
 }
 
 
-/* Centrer le contenu de la page horizontalement */
 main {
   width: 100%;
   max-width: 1000px;
@@ -32,7 +28,6 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Styler les en-têtes */
 header {
   text-align: center;
   color: #fff;
@@ -44,7 +39,6 @@ header h1 {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* Styler la table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -62,7 +56,6 @@ th {
   color: #dedede;
 }
 
-/* Styler le bouton */
 button {
   font-size: 1rem;
   font-family: 'Open Sans', sans-serif;
@@ -79,7 +72,6 @@ button:hover {
   background-color: #555;
 }
 
-/* Styler le pied de page */
 footer {
   text-align: center;
   color: #fff;

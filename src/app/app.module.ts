@@ -9,6 +9,8 @@ import { AddLivreComponent } from './add-livre/add-livre.component';
 import { ListeSiteComponent } from './liste-site/liste-site.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateLivreComponent } from './update-livre/update-livre.component';
+import { UpdateSiteComponent } from './update-site/update-site.component';
+import { AddSiteComponent } from './add-site/add-site.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { UpdateLivreComponent } from './update-livre/update-livre.component';
     ListeLivresComponent,
     AddLivreComponent,
     ListeSiteComponent,
-    UpdateLivreComponent
+    UpdateLivreComponent,
+    UpdateSiteComponent,
+    AddSiteComponent
   ],
   imports: [
     BrowserModule,
