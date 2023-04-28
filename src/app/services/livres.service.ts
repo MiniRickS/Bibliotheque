@@ -11,8 +11,8 @@ export class LivreService {
 
   constructor(private http: HttpClient) {}
 
-  ajouterLivre(nouveauLivre: Livre): Observable<Livre> {
-    return this.http.post<Livre>(this.apiUrl, nouveauLivre);
+  ajouterLivre(livre: Omit<Livre, 'id'>): Observable<Livre> {
+    return this.http.post<Livre>(this.apiUrl, livre);
   }
 
   getLivres(): Observable<Livre[]> {

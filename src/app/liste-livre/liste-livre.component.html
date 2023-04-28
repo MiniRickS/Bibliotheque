@@ -16,7 +16,6 @@
         <tr>
           <th>Nom</th>
           <th>Date de lecture</th>
-          <th>Lien</th>
           <th>Site</th>
           <th>Langues</th>
           <th>Chapitres lus</th>
@@ -25,9 +24,8 @@
       </thead>
       <tbody>
         <tr *ngFor="let livre of livres">
-          <td>{{ livre.nom }}</td>
-          <td>{{ livre.dateLecture.toLocaleDateString('fr-FR') }}</td>
-          <td><a href="{{ livre.lien }}">{{ livre.lien }}</a></td>
+          <td><a href="{{ livre.lien }}">{{ livre.nom }}</a></td>
+          <td>{{ livre.dateLecture | date:'dd/MM/yy' }}</td>
           <td>
             <ul>
               <li *ngFor="let site of livre.sites">{{ site.nom }}</li>

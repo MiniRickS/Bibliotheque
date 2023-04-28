@@ -1,39 +1,45 @@
 <div class="container">
   <h2 class="title">Ajouter un livre</h2>
-  <form class="form">
-    <div class="form__group">
-      <label for="dateLecture">Date de lecture :</label>
-      <input type="date" [(ngModel)]="nouveauLivre.dateLecture" id="dateLecture" name="dateLecture">
-    </div>
-    <div class="form__group">
-      <label for="nom">Nom :</label>
-      <input type="text" [(ngModel)]="nouveauLivre.nom" id="nom" name="nom">
-    </div>
-    <div class="form__group">
-      <label for="lien">Lien :</label>
-      <input type="text" [(ngModel)]="nouveauLivre.lien" id="lien" name="lien">
-    </div>
-    <div class="form__group">
-      <label for="sites">Sites :</label>
-      <div *ngFor="let site of nouveauLivre.sites; let i = index">
-        <label for="site{{i}}">Site {{i + 1}} :</label>
-        <input type="text" [(ngModel)]="site.nom" id="site{{i}}" name="site{{i}}">
-        <label for="domaine{{i}}">Domaine {{i + 1}} :</label>
-        <input type="text" [(ngModel)]="site.domaine" id="domaine{{i}}" name="domaine{{i}}">
+  <form class="form row" #f="ngForm" (ngSubmit)="ajouterLivre()">
+    <div class="form__group col-md-6">
+      <div class="form__group">
+        <label for="nom">Nom :</label>
+        <input type="text" [(ngModel)]="nouveauLivre.nom" id="nom" name="nom" class="form-control">
+      </div>
+      <div class="form__group">
+        <label for="dateLecture">Date de lecture :</label>
+        <input type="date" [(ngModel)]="nouveauLivre.dateLecture" id="dateLecture" name="dateLecture" class="form-control">
+      </div>
+      <div class="form__group">
+        <label for="lien">Lien :</label>
+        <input type="text" [(ngModel)]="nouveauLivre.lien" id="lien" name="lien" class="form-control">
       </div>
     </div>
-    <div class="form__group">
-      <label for="langues">Langues :</label>
-      <input type="text" [(ngModel)]="nouveauLivre.langues" id="langues" name="langues">
+    <div class="form__group col-md-6">
+      <div class="form__group">
+        <label for="langues">Langues :</label>
+        <input type="text" [(ngModel)]="nouveauLivre.langues" id="langues" name="langues" class="form-control">
+      </div>
+      <div class="form__group">
+        <label for="notes">Notes :</label>
+        <input type="text" [(ngModel)]="nouveauLivre.notes" id="notes" name="notes" class="form-control">
+      </div>
+      <div class="form__group">
+        <label for="chapitresLus">Dernier chapitre lu :</label>
+        <input type="text" [(ngModel)]="nouveauLivre.chapitresLus" id="chapitresLus" name="chapitresLus" class="form-control">
+      </div>
     </div>
-    <div class="form__group">
-      <label for="chapitresLus">Chapitres lus :</label>
-      <input type="text" [(ngModel)]="nouveauLivre.chapitresLus" id="chapitresLus" name="chapitresLus">
-    </div>
-    <div class="form__group">
-      <label for="notes">Notes :</label>
-      <input type="text" [(ngModel)]="nouveauLivre.notes" id="notes" name="notes">
-    </div>
-    <button class="btn" (click)="ajouterLivre()">Ajouter</button>
+
+      <div class="form__group">
+        <label for="sites">Sites :</label>
+        <div *ngFor="let site of nouveauLivre.sites; let i = index">
+          <label for="site{{i}}">Site {{i + 1}} :</label>
+          <input type="text" [(ngModel)]="site.nom" id="site{{i}}" name="site{{i}}" class="form-control">
+          <label for="domaine{{i}}">Domaine {{i + 1}} :</label>
+          <input type="text" [(ngModel)]="site.domaine" id="domaine{{i}}" name="domaine{{i}}" class="form-control">
+        </div>
+      </div>
+
   </form>
+  <button class="btn btn-primary" type="submit">Ajouter</button>
 </div>

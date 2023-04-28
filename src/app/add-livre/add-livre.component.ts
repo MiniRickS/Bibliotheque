@@ -8,13 +8,11 @@ import { LivreService } from '../services/livres.service';
   styleUrls: ['./add-livre.component.css']
 })
 export class AddLivreComponent implements OnInit {
-  nouveauLivre: Livre = {
-    id: 0,
+  nouveauLivre: Omit<Livre, 'id'> = {
     nom: '',
-    dateLecture: new Date(),
+    dateLecture: new Date().toISOString().slice(0, 10),
     lien: '',
-    sites: [
-    ],
+    sites: [],
     langues: '',
     chapitresLus: 0,
     notes: 0
@@ -31,19 +29,30 @@ export class AddLivreComponent implements OnInit {
     }
   }
 
-  ajouterLivre(): void {
-    this.livreService.ajouterLivre(this.nouveauLivre).subscribe(() => {
-      this.nouveauLivre = {
-        id: 0,
-        nom: '',
-        dateLecture: new Date(),
-        lien: '',
-        sites: [
-        ],
-        langues: '',
-        chapitresLus: 0,
-        notes: 0
-      };
-    });
-  }
+  formatDate(dateString: string): string {
+    const date = new Date(Date.parse(dateString));
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+}
+
+
+ajouterLivre(): void {
+  this.nouveauLivre.dateLecture = new Date(this.nouveauLivre.dateLecture).toISOString().slice(0, 10);
+  this.livreService.ajouterLivre(this.nouveauLivre).subscribe(() => {
+    this.nouveauLivre = {
+      nom: '',
+      dateLecture: new Date().toISOString().slice(0, 10),
+      lien: '',
+      sites: [],
+      langues: '',
+      chapitresLus: 0,
+      notes: 0
+    };
+  });
+}
+
+
 }

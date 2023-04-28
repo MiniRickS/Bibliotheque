@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ListeLivresComponent } from './liste-livre/liste-livre.component';
 import { AddLivreComponent } from './add-livre/add-livre.component';
 import { ListeSiteComponent } from './liste-site/liste-site.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ListeSiteComponent } from './liste-site/liste-site.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

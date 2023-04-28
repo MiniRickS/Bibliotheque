@@ -7,18 +7,20 @@
 </head>
 <body>
   <header>
-    <h1>Bibliothèque</h1>
-    <nav>
+    <h1 class="header-title">Scanthèque</h1>
+    <nav class="header-nav">
       <a routerLink="/livres" routerLinkActive="active">Liste des livres</a>
       <a routerLink="/ajout-livre" routerLinkActive="active">Ajouter un livre</a>
     </nav>
   </header>
 
+
   <main>
     <router-outlet></router-outlet>
   </main>
+
   <footer>
-    <p>Bibliothèque 2023©</p>
+    <p>Scanthèque 2023©</p>
   </footer>
 </body>
 </html>

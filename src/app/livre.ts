@@ -1,9 +1,9 @@
 import { Site } from './site';
 
 export interface Livre {
-  id: number;
+  id?: number;
   nom: string;
-  dateLecture: Date;
+  dateLecture: string;
   lien: string;
   sites: Site[];
   langues: string;
