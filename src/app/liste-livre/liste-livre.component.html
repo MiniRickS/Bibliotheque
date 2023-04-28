@@ -24,17 +24,19 @@
       </thead>
       <tbody>
         <tr *ngFor="let livre of livres">
-          <td><a href="{{ livre.lien }}">{{ livre.nom }}</a></td>
+          <td><a href="{{ livre.lien }}" target="_blank">{{ livre.nom }}</a></td>
           <td>{{ livre.dateLecture | date:'dd/MM/yy' }}</td>
           <td>
             <ul>
-              <li *ngFor="let site of livre.sites">{{ site.nom }}</li>
+              <li *ngFor="let site of livre.sites"><a href="{{ site.domaine }}" target="_blank">{{ site.nom }}</a></li>
             </ul>
           </td>
+
           <td>{{ livre.langues }}</td>
           <td>{{ livre.chapitresLus }}</td>
           <td>{{ livre.notes }}</td>
           <td>
+            <button (click)="modifierLivre(livre)">Modifier</button>
             <button (click)="supprimerLivre(livre)">Supprimer</button>
           </td>
         </tr>

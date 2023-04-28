@@ -28,4 +28,9 @@ export class LivreService {
     const url = `${this.apiUrl}/${livre.id}`;
     return this.http.delete<Livre>(url);
   }
+
+  getLivreById(id: number): Observable<Livre> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Livre>(url);
+  }
 }
