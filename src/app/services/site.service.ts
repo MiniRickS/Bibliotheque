@@ -7,9 +7,9 @@ import { Site } from '../site';
   providedIn: 'root'
 })
 export class SiteService {
-  apiUrl = 'http://localhost:8080/api/sites';
+  apiUrl = 'http://localhost:8090/api/sites';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ajouterSite(site: Omit<Site, 'id'>): Observable<Site> {
     return this.http.post<Site>(this.apiUrl, site);

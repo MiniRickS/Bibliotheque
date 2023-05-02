@@ -3,28 +3,28 @@ import { Site } from '../site';
 import { SiteService } from '../services/site.service';
 
 @Component({
-selector: 'app-add-site',
-templateUrl: './add-site.component.html',
-styleUrls: ['./add-site.component.css']
+  selector: 'app-add-site',
+  templateUrl: './add-site.component.html',
+  styleUrls: ['./add-site.component.css']
 })
 export class AddSiteComponent implements OnInit {
-nouveauSite: Omit<Site, 'id'> = {
-nom: '',
-domaine: ''
-};
+  nouveauSite: Omit<Site, 'id'> = {
+    nom: '',
+    domaine: ''
+  };
 
-constructor(private siteService: SiteService) { }
+  constructor(private siteService: SiteService) { }
 
-ngOnInit(): void {
-}
+  ngOnInit(): void {
+  }
 
-ajouterSite(): void {
-this.siteService.ajouterSite(this.nouveauSite).subscribe(() => {
-this.nouveauSite = {
-nom: '',
-domaine: ''
-};
-});
-}
+  ajouterSite(): void {
+    this.siteService.ajouterSite(this.nouveauSite).subscribe(() => {
+      this.nouveauSite = {
+        nom: '',
+        domaine: ''
+      };
+    });
+  }
 
 }

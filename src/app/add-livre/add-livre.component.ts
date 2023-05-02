@@ -36,37 +36,37 @@ export class AddLivreComponent implements OnInit {
     const day = date.getDate().toString().padStart(2, '0');
 
     return `${year}-${month}-${day}`;
-}
+  }
 
-chapitresOptions: number[] = Array.from({length: 300}, (_, i) => i+1);
-notesOptions: number[] = Array.from({length: 11}, (_, i) => i);
+  chapitresOptions: number[] = Array.from({ length: 300 }, (_, i) => i + 1);
+  notesOptions: number[] = Array.from({ length: 11 }, (_, i) => i);
 
-ajouterLivre(): void {
-  this.nouveauLivre.dateLecture = new Date(this.nouveauLivre.dateLecture).toISOString().slice(0, 10);
-  this.livreService.ajouterLivre(this.nouveauLivre).subscribe(() => {
-    this.nouveauLivre = {
-      nom: '',
-      dateLecture: new Date().toISOString().slice(0, 10),
-      lien: '',
-      sites: [],
-      langues: '',
-      chapitresLus: 0,
-      notes: 0
-    };
-  });
-}
+  ajouterLivre(): void {
+    this.nouveauLivre.dateLecture = new Date(this.nouveauLivre.dateLecture).toISOString().slice(0, 10);
+    this.livreService.ajouterLivre(this.nouveauLivre).subscribe(() => {
+      this.nouveauLivre = {
+        nom: '',
+        dateLecture: new Date().toISOString().slice(0, 10),
+        lien: '',
+        sites: [],
+        langues: '',
+        chapitresLus: 0,
+        notes: 0
+      };
+    });
+  }
 
-ajouterSite(): void {
-  this.nouveauLivre.sites.push({ nom: '', domaine: '' });
-}
+  ajouterSite(): void {
+    this.nouveauLivre.sites.push({ nom: '', domaine: '' });
+  }
 
-retirerDernierSite(): void {
-  this.nouveauLivre.sites.pop();
-}
+  retirerDernierSite(): void {
+    this.nouveauLivre.sites.pop();
+  }
 
-supprimerSite(index: number): void {
-  this.nouveauLivre.sites.splice(index, 1);
-}
+  supprimerSite(index: number): void {
+    this.nouveauLivre.sites.splice(index, 1);
+  }
 
 
 }

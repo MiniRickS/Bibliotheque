@@ -7,6 +7,6 @@ export interface Livre {
   lien: string;
   sites: Site[];
   langues: string;
-  chapitresLus: number|null;
+  chapitresLus: number | null;
   notes: number;
 }

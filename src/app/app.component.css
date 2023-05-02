@@ -47,6 +47,29 @@ header {
   margin-top: 1rem;
 }
 
+.header-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+.header-actions button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.header-actions button:hover,
+.header-actions button:active {
+  background-color: #555;
+}
 
 
 h1 {

@@ -3,7 +3,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -17,15 +18,14 @@ html, body {
   overflow-y: scroll;
 }
 
-
 main {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: rgba(81, 81, 81, 0.8);
+  background-color: #767575cc;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px #00000080;
 }
 
 header {
@@ -45,7 +45,8 @@ table {
   margin-top: 2rem;
 }
 
-th, td {
+th,
+td {
   text-align: center;
   padding: 0.5rem;
   border-bottom: 1px solid #ffffff;
@@ -69,7 +70,7 @@ button {
 }
 
 button:hover {
-  background-color: #555;
+  background-color: #757575;
 }
 
 footer {
@@ -81,4 +82,13 @@ footer {
 footer p {
   font-size: 0.8rem;
   font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

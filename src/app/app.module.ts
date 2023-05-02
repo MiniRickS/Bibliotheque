@@ -11,6 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateLivreComponent } from './update-livre/update-livre.component';
 import { UpdateSiteComponent } from './update-site/update-site.component';
 import { AddSiteComponent } from './add-site/add-site.component';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { APP_INITIALIZER } from '@angular/core';
+import { initializer } from './initializer';
+
+
 
 
 @NgModule({
@@ -27,9 +32,21 @@ import { AddSiteComponent } from './add-site/add-site.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    KeycloakAngularModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService],
+    },
+  ],
+
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+
+}

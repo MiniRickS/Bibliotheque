@@ -7,9 +7,9 @@ import { Livre } from '../livre';
   providedIn: 'root'
 })
 export class LivreService {
-  apiUrl = 'http://localhost:8080/api/livres';
+  apiUrl = 'http://localhost:8090/api/livres';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ajouterLivre(livre: Omit<Livre, 'id'>): Observable<Livre> {
     return this.http.post<Livre>(this.apiUrl, livre);

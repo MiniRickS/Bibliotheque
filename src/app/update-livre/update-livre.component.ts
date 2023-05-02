@@ -26,7 +26,7 @@ export class UpdateLivreComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private livreService: LivreService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');

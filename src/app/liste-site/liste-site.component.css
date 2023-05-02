@@ -3,7 +3,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -23,7 +24,7 @@ main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: rgba(81, 81, 81, 0.8);
+  background-color: rgba(118, 117, 117, 0.8);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -45,7 +46,8 @@ table {
   margin-top: 2rem;
 }
 
-th, td {
+th,
+td {
   text-align: center;
   padding: 0.5rem;
   border-bottom: 1px solid #ffffff;
@@ -69,7 +71,7 @@ button {
 }
 
 button:hover {
-  background-color: #555;
+  background-color: #757575;
 }
 
 footer {
@@ -81,4 +83,13 @@ footer {
 footer p {
   font-size: 0.8rem;
   font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

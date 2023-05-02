@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class ListeLivresComponent implements OnInit {
   livres: Livre[] = [];
 
-  constructor(private livreService: LivreService, private router: Router) {}
+  constructor(private livreService: LivreService, private router: Router) { }
 
   ngOnInit() {
     this.livreService.getLivres().subscribe(livres => {

@@ -35,10 +35,7 @@
   border-radius: 3px;
   border: none;
   width: 100%;
-}
-
-.form__group input {
-  height: 24px;
+  height: 2.4rem;
 }
 
 .form__group label {
@@ -63,13 +60,13 @@ button:hover,
 button:active {
   background-color: #555;
 }
+
 .full-width {
   grid-column: 1 / -1;
-  }
+}
 
-  .col-md-12 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    }
-
+.col-md-12 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

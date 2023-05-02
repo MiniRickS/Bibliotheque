@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Livre } from './livre';
 import { LivreService } from './services/livres.service';
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,18 @@ import { LivreService } from './services/livres.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  livres: Livre[] =[];
+  public keycloak: KeycloakService;
 
-  constructor(private livreService: LivreService) { }
-
-  ngOnInit(): void {
-    this.livreService.getLivres().subscribe((livres: Livre[]) => {
-      this.livres = livres;
-    });
+  constructor(private keycloakService: KeycloakService) {
+    this.keycloak = keycloakService;
+  }
+  async logout() {
+    try {
+      await this.keycloakService.logout();
+    } catch (error) {
+      console.error('Logout failed', error);
+    }
   }
 }
+
+

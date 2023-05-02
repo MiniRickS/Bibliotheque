@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="title">Modifier le livre "{{ livre.nom }}"</h2>
+  <h2 class="title">Modifier le livre {{ livre.nom }}</h2>
   <form class="form row" #f="ngForm" (ngSubmit)="modifierLivre()">
     <div class="form__group col-md-6">
       <div class="form__group">
@@ -35,7 +35,8 @@
       </div>
       <div class="form__group">
         <label for="chapitresLus">Dernier chapitre lu :</label>
-        <input type="number" [(ngModel)]="livre.chapitresLus" id="chapitresLus" name="chapitresLus" class="form-control">
+        <input type="number" [(ngModel)]="livre.chapitresLus" id="chapitresLus" name="chapitresLus"
+          class="form-control">
       </div>
       <div class="form__group" *ngFor="let site of livre.sites; let i = index">
         <label for="domaine{{i}}">Domaine du site {{i + 1}} :</label>

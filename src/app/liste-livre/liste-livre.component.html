@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
 </head>
+
 <body>
   <header>
     <br>
@@ -24,11 +26,12 @@
       </thead>
       <tbody>
         <tr *ngFor="let livre of livres">
-          <td><a href="{{ livre.lien }}" target="_blank">{{ livre.nom }}</a></td>
+          <td><a class="link" href="{{ livre.lien }}" target="_blank">{{ livre.nom }}</a></td>
           <td>{{ livre.dateLecture | date:'dd/MM/yy' }}</td>
           <td>
             <ul>
-              <li *ngFor="let site of livre.sites"><a href="{{ site.domaine }}" target="_blank">{{ site.nom }}</a></li>
+              <li *ngFor="let site of livre.sites"><a class="link" href="{{ site.domaine }}" target="_blank">{{ site.nom
+                  }}</a></li>
             </ul>
           </td>
 
@@ -46,4 +49,5 @@
   <footer>
   </footer>
 </body>
+
 </html>

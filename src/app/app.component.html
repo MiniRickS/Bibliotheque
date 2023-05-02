@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bibliothèque</title>
+  <title>Scanthèque</title>
 </head>
+
 <body>
   <header>
     <h1 class="header-title">Scanthèque</h1>
@@ -14,8 +16,10 @@
       <a routerLink="/sites" routerLinkActive="active">Liste des sites</a>
       <a routerLink="/ajout-site" routerLinkActive="active">Ajouter un site</a>
     </nav>
+    <div class="header-actions">
+      <button (click)="logout()">Déconnexion</button>
+    </div>
   </header>
-
 
   <main>
     <router-outlet></router-outlet>
@@ -25,4 +29,5 @@
     <p>Scanthèque 2023©</p>
   </footer>
 </body>
+
 </html>

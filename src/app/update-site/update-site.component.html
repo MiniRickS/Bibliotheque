@@ -1,1 +1,22 @@
-<p>update-site works!</p>
+<div class="container">
+  <h2 class="title">Modifier le site {{ site.nom }}</h2>
+  <form class="form row" #f="ngForm" (ngSubmit)="modifierSite()">
+    <div class="form__group col-md-6">
+      <div class="form__group">
+        <label for="nom">Nom :</label>
+        <input type="text" [(ngModel)]="site.nom" id="nom" name="nom" class="form-control">
+      </div>
+    </div>
+    <div class="form__group col-md-6">
+      <div class="form__group">
+        <label for="domaine">Domaine :</label>
+        <input type="text" [(ngModel)]="site.domaine" id="domaine" name="domaine" class="form-control">
+      </div>
+    </div>
+    <div class="form__group col-md-12 full-width">
+      <div class="center-btn">
+        <button type="submit" class="btn btn-success">Modifier le site</button>
+      </div>
+    </div>
+  </form>
+</div>

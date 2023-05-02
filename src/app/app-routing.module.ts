@@ -5,6 +5,7 @@ import { ListeLivresComponent } from './liste-livre/liste-livre.component';
 import { UpdateLivreComponent } from './update-livre/update-livre.component';
 import { ListeSiteComponent } from './liste-site/liste-site.component';
 import { AddSiteComponent } from './add-site/add-site.component';
+import { UpdateSiteComponent } from './update-site/update-site.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/livres', pathMatch: 'full' },
@@ -12,8 +13,10 @@ const routes: Routes = [
   { path: 'ajout-livre', component: AddLivreComponent },
   { path: 'modifier-livre/:id', component: UpdateLivreComponent },
   { path: 'sites', component: ListeSiteComponent },
-  { path: 'ajout-site', component: AddSiteComponent }
+  { path: 'ajout-site', component: AddSiteComponent },
+  { path: 'modifier-site/:id', component: UpdateSiteComponent }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
